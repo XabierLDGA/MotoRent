@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cliente,motorent.cliente,model_motorent_cliente,,1,1,1,1
+access_vehiculo,motorent.vehiculo,model_motorent_vehiculo,,1,1,1,1
+access_contrato,motorent.contrato,model_motorent_contrato,,1,1,1,1

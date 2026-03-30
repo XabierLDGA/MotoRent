@@ -1,0 +1,66 @@
+.o_main_navbar {
+    background-color: #111827 !important;
+}
+
+.o_form_view {
+    background-color: #f3f4f6 !important;
+}
+
+.btn-primary {
+    background-color: #ff4d00 !important;
+    border-color: #ff4d00 !important;
+}
+
+.btn-primary:hover {
+    background-color: #ff6a2f !important;
+    border-color: #ff6a2f !important;
+}
+
+.o_list_view thead {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+}
+
+.o_list_view thead th {
+    color: #ffffff !important;
+}
+
+.o_list_view tbody tr:hover {
+    background-color: #1f2937 !important;
+}
+
+.o_list_view tbody tr:hover td {
+    color: #ff4d00 !important;
+}
+
+.o_list_view tbody tr:hover a {
+    color: #ff4d00 !important;
+}
+
+.o_list_view tbody tr td {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.o_searchview {
+    background-color: #e5e7eb !important;
+}
+
+.o_control_panel {
+    background-color: #f3f4f6 !important;
+}
+
+.o_form_view .o_form_sheet_bg {
+    background-color: #ffffff !important;
+}
+
+.o_form_view .o_group .o_td_label label {
+    color: #111827 !important;
+}
+
+a {
+    color: #ff4d00;
+}
+
+a:hover {
+    color: #ff6a2f;
+}
