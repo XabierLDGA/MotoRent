@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Menú principal -->
+
+    <!-- Menú principal del módulo Motorent -->
     <menuitem id="menu_motorent_root" name="Motorent"/>
 
-    <!-- ================= Clientes ================= -->
+    <!-- ================= CLIENTES ================= -->
+
+    <!-- Vista de lista de clientes -->
     <record id="view_cliente_tree" model="ir.ui.view">
         <field name="name">cliente.tree</field>
         <field name="model">motorent.cliente</field>
         <field name="arch" type="xml">
             <tree>
+                <!-- Campos que se muestran en la tabla de clientes -->
                 <field name="name"/>
                 <field name="dni"/>
                 <field name="telefono"/>
@@ -18,6 +22,7 @@
         </field>
     </record>
 
+    <!-- Vista de formulario de clientes -->
     <record id="view_cliente_form" model="ir.ui.view">
         <field name="name">cliente.form</field>
         <field name="model">motorent.cliente</field>
@@ -25,45 +30,58 @@
             <form>
                 <sheet>
                     <group>
+                        <!-- Datos personales del cliente -->
                         <field name="name"/>
                         <field name="dni"/>
                         <field name="telefono"/>
                         <field name="email"/>
                         <field name="direccion"/>
+
+                        <!-- Imagen del carnet del cliente -->
                         <field name="foto_carnet" widget="image"/>
+
+                        <!-- Información laboral y contacto relacionado -->
                         <field name="tipo_contrato_laboral"/>
-			<field name="partner_id"/>
+                        <field name="partner_id"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
+    <!-- Acción para abrir clientes -->
     <record id="action_cliente" model="ir.actions.act_window">
         <field name="name">Clientes</field>
         <field name="res_model">motorent.cliente</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- Menú de clientes -->
     <menuitem id="menu_motorent_clientes" name="Clientes" parent="menu_motorent_root" action="action_cliente"/>
 
-    <!-- ================= Vehículos ================= -->
+    <!-- ================= VEHÍCULOS ================= -->
+
+    <!-- Vista de lista de vehículos -->
     <record id="view_vehiculo_tree" model="ir.ui.view">
         <field name="name">vehiculo.tree</field>
         <field name="model">motorent.vehiculo</field>
         <field name="arch" type="xml">
             <tree>
+                <!-- Datos principales del vehículo -->
                 <field name="name"/>
                 <field name="matricula"/>
                 <field name="marca"/>
                 <field name="anyo"/>
                 <field name="numero_bastidor"/>
                 <field name="disponible"/>
+
+                <!-- Imagen pequeña del vehículo en la lista -->
                 <field name="imagen" widget="image" options="{'size': (50, 50)}"/>
             </tree>
         </field>
     </record>
 
+    <!-- Vista de formulario de vehículos -->
     <record id="view_vehiculo_form" model="ir.ui.view">
         <field name="name">vehiculo.form</field>
         <field name="model">motorent.vehiculo</field>
@@ -71,6 +89,7 @@
             <form>
                 <sheet>
                     <group>
+                        <!-- Información del vehículo -->
                         <field name="name"/>
                         <field name="matricula"/>
                         <field name="marca"/>
@@ -78,6 +97,8 @@
                         <field name="numero_bastidor"/>
                         <field name="disponible"/>
                         <field name="observaciones"/>
+
+                        <!-- Imagen del vehículo -->
                         <field name="imagen" widget="image"/>
                     </group>
                 </sheet>
@@ -85,35 +106,45 @@
         </field>
     </record>
 
+    <!-- Acción para abrir vehículos -->
     <record id="action_vehiculo" model="ir.actions.act_window">
         <field name="name">Vehículos</field>
         <field name="res_model">motorent.vehiculo</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- Menú de vehículos -->
     <menuitem id="menu_motorent_vehiculos" name="Vehículos" parent="menu_motorent_root" action="action_vehiculo"/>
 
-    <!-- ================= Contratos ================= -->
+    <!-- ================= CONTRATOS ================= -->
+
+    <!-- Vista de lista de contratos -->
     <record id="view_contrato_tree" model="ir.ui.view">
         <field name="name">contrato.tree</field>
         <field name="model">motorent.contrato</field>
         <field name="arch" type="xml">
             <tree>
+                <!-- Datos principales del contrato -->
                 <field name="name"/>
                 <field name="cliente_id"/>
                 <field name="vehiculo_id"/>
                 <field name="fecha_inicio"/>
                 <field name="fecha_fin"/>
                 <field name="coste_mensual"/>
+
+                <!-- Datos bancarios y condiciones del contrato -->
                 <field name="iban"/>
                 <field name="titular_cuenta"/>
                 <field name="seguro_incluido"/>
-                <field name="kilometraje_maximo"/>	
-		<field name="pedido_venta_id"/>
+                <field name="kilometraje_maximo"/>
+
+                <!-- Pedido de venta asociado al contrato -->
+                <field name="pedido_venta_id"/>
             </tree>
         </field>
     </record>
 
+    <!-- Vista de formulario de contratos -->
     <record id="view_contrato_form" model="ir.ui.view">
         <field name="name">contrato.form</field>
         <field name="model">motorent.contrato</field>
@@ -121,32 +152,39 @@
             <form>
                 <sheet>
                     <group>
+                        <!-- Información básica del contrato -->
                         <field name="name"/>
                         <field name="cliente_id"/>
                         <field name="vehiculo_id"/>
                         <field name="fecha_inicio"/>
                         <field name="fecha_fin"/>
                         <field name="coste_mensual"/>
+
+                        <!-- Información de pago y condiciones -->
                         <field name="iban"/>
                         <field name="titular_cuenta"/>
                         <field name="seguro_incluido"/>
                         <field name="kilometraje_maximo"/>
-			<button name="crear_pedido_venta"
-			        string="Crear Pedido de Venta"
-       				type="object"
-       				class="btn-primary"/>
 
+                        <!-- Botón que ejecuta el método crear_pedido_venta del modelo -->
+                        <button name="crear_pedido_venta"
+                                string="Crear Pedido de Venta"
+                                type="object"
+                                class="btn-primary"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
+    <!-- Acción para abrir contratos -->
     <record id="action_contrato" model="ir.actions.act_window">
         <field name="name">Contratos</field>
         <field name="res_model">motorent.contrato</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- Menú de contratos -->
     <menuitem id="menu_motorent_contratos" name="Contratos" parent="menu_motorent_root" action="action_contrato"/>
+
 </odoo>
