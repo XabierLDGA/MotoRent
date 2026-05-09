@@ -1,66 +1,102 @@
+/* ================= BARRA SUPERIOR ================= */
+
+/* Cambia el color de la barra de navegación principal */
 .o_main_navbar {
     background-color: #111827 !important;
 }
 
+
+/* ================= FORMULARIOS ================= */
+
+/* Color de fondo general de las vistas de formulario */
 .o_form_view {
     background-color: #f3f4f6 !important;
 }
 
+/* Fondo blanco para la hoja interna del formulario */
+.o_form_view .o_form_sheet_bg {
+    background-color: #ffffff !important;
+}
+
+/* Color del texto de las etiquetas de los campos */
+.o_form_view .o_group .o_td_label label {
+    color: #111827 !important;
+}
+
+
+/* ================= BOTONES ================= */
+
+/* Color principal de los botones */
 .btn-primary {
     background-color: #ff4d00 !important;
     border-color: #ff4d00 !important;
 }
 
+/* Color del botón cuando el ratón pasa por encima */
 .btn-primary:hover {
     background-color: #ff6a2f !important;
     border-color: #ff6a2f !important;
 }
 
+
+/* ================= TABLAS / LISTAS ================= */
+
+/* Fondo de la cabecera de las tablas */
 .o_list_view thead {
     background-color: #1f2937 !important;
     color: #ffffff !important;
 }
 
+/* Color del texto de las columnas */
 .o_list_view thead th {
     color: #ffffff !important;
 }
 
+/* Color de fondo al pasar el ratón sobre una fila */
 .o_list_view tbody tr:hover {
     background-color: #1f2937 !important;
 }
 
+/* Color del texto de la fila seleccionada */
 .o_list_view tbody tr:hover td {
     color: #ff4d00 !important;
 }
 
+/* Color de los enlaces dentro de la fila seleccionada */
 .o_list_view tbody tr:hover a {
     color: #ff4d00 !important;
 }
 
+/* Añade una transición suave al cambiar colores */
 .o_list_view tbody tr td {
     transition: color 0.2s ease, background-color 0.2s ease;
 }
 
+
+/* ================= BARRA DE BÚSQUEDA ================= */
+
+/* Fondo de la barra de búsqueda */
 .o_searchview {
     background-color: #e5e7eb !important;
 }
 
+
+/* ================= PANEL DE CONTROL ================= */
+
+/* Fondo del panel superior de control */
 .o_control_panel {
     background-color: #f3f4f6 !important;
 }
 
-.o_form_view .o_form_sheet_bg {
-    background-color: #ffffff !important;
-}
 
-.o_form_view .o_group .o_td_label label {
-    color: #111827 !important;
-}
+/* ================= ENLACES ================= */
 
+/* Color normal de los enlaces */
 a {
     color: #ff4d00;
 }
 
+/* Color de los enlaces al pasar el ratón */
 a:hover {
     color: #ff6a2f;
 }
